@@ -30,15 +30,18 @@
         <div class="col-3">
           <h1 class="titulo-restaurante">Restaurant & Lounge</h1>
         </div>
-        <div class="col-3"></div>
-        <div class="col-2">
-          <img
-            src="img/carro.png"
-            alt="Carro de compras"
-            class="icon-nav float-right"
-          />
+        <div class="col-7"></div>
+        <div class="col-1">
+          <a href="#">
+            <img
+              src="img/carro.png"
+              alt="Carro de compras"
+              class="icon-nav"
+              id="carro-compras"
+            />
+          </a>
         </div>
-        <div class="col-2 float-right"><p>items</p></div>
+        <div class="col-1" id="items-num"><p>0 items</p></div>
       </div>
     </header>
     <div class="container-fluid">
@@ -63,27 +66,74 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a id="burgers" class="nav-link" href="#" onclick="fillBurgers();">Burgers</a>  
+            <a id="burgers-nav" class="nav-link" href="#">Burgers</a>
           </li>
           <li class="nav-item">
-            <a id="tacos" class="nav-link" href="#" onclick="fillTacos();">Tacos</a>
+            <a id="tacos-nav" class="nav-link" href="#">Tacos</a>
           </li>
           <li class="nav-item">
-            <a id="salads" class="nav-link" href="#" onclick="fillSalads();">Salads</a>
+            <a id="salads-nav" class="nav-link" href="#">Salads</a>
           </li>
           <li class="nav-item">
-            <a id="desserts" class="nav-link" href="#" onclick="fillDesserts();">Desserts</a>
+            <a id="desserts-nav" class="nav-link" href="#">Desserts</a>
           </li>
           <li class="nav-item">
-            <a id="drinks" class="nav-link" href="#" onclick="fillDrinks();">Drinks & Sides</a>
+            <a id="drinks-nav" class="nav-link" href="#">Drinks & Sides</a>
           </li>
         </ul>
       </div>
     </nav>
     <hr />
     <main>
-      <h2 class="text-center" id="title-main">Burgers</h2>
+      <h2 class="text-center" id="title-main">Click on an item</h2>
       <hr />
+      <div class="container-fluid">
+        <div class="row" id="content-main"></div>
+      </div>
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="cancelModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">
+                Cancel the order
+              </h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              Are you sure about cancelling the order?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-cancel" data-dismiss="modal">
+                No, I want to continue adding products
+              </button>
+              <button
+                type="button"
+                class="btn btn-confirm"
+                id="cancel-order-btn"
+                data-dismiss="modal"
+              >
+                Yes, I want to cancel the order
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
     <footer>
       <p class="text-center">
