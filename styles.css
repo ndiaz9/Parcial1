@@ -1,0 +1,16 @@
+.titulo-restaurante {
+  font-family: "Satisfy", cursive;
+}
+
+.icon-nav{
+    height: 30px;
+    width: 30px;
+}
+
+.header-image{
+    height: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px;
+}
